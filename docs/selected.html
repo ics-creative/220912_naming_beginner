@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const favoriteNumberText = document.querySelector(".js-favoriteNumber");
+      const numberButtons = document.querySelectorAll(".js-numberButton");
+      // ボタンを選択した時のイベント
+      numberButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // 選択された数字で更新する
+          const selectedNumber = button.innerHTML;
+          favoriteNumberText.innerHTML = selectedNumber;
+        })
+      })
+    })
+  </script>
+  <link rel="stylesheet" href="./base.css">
+  <style>
+    .numberButton {
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      border: 2px solid #5B66A6;
+      border-radius: 8px;
+      transition: background-color 0.1s;
+    }
+    .numberButton:hover {
+      background-color: #d5d9f0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <p>好きな数字は？</p>
+  <div>
+    <button class="numberButton js-numberButton">1</button>
+    <button class="numberButton js-numberButton">2</button>
+    <button class="numberButton js-numberButton">3</button>
+    <button class="numberButton js-numberButton">4</button>
+    <button class="numberButton js-numberButton">5</button>
+  </div>
+  <p class="primaryUnderlinedText">選択されたのは
+    <span class="primaryColoredText js-favoriteNumber"></span>
+    です！
+  </p>
+</div>
+</body>
+</html>
