@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>
+  </script>
+  <link rel="stylesheet" href="./base.css">
+  <style>
+    li {
+      line-height: 56px;
+    }
+    input {
+      display: none;
+    }
+    input:checked + label::before {
+      background-color: #5B66A6;
+    }
+    input:checked + label::after {
+      opacity: 1;
+    }
+    label {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      transition: background-color 0.1s;
+      position: relative;
+    }
+    label::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border: 2px solid #5B66A6;
+      border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      transition: background-color 0.1s;
+    }
+    label::after {
+      content: "";
+      width: 16px;
+      height: 8px;
+      border-left: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+      position: absolute;
+      top: 26px;
+      left: 16px;
+      transform: translateY(-50%) rotate(-38deg);
+      opacity: 0;
+      transition: opacity 0.1s;
+    }
+    label:hover {
+      background-color: #d5d9f0;
+    }
+    .category {
+      font-size: 32px;
+      width: 560px;
+      border-top: 1px solid #5B66A6;
+    }
+    .category > li {
+      border-bottom: 1px solid #5B66A6;
+    }
+    .subcategory {
+      font-size: 24px;
+      margin-left: 24px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <p>好きな動物は何ですか？</p>
+  <ul class="category">
+    <li>
+      <input type="checkbox" id="mammal">
+      <label for="mammal">哺乳類</label>
+      <ul class="subcategory">
+        <li>
+          <input type="checkbox" id="panda">
+          <label for="panda">パンダ</label>
+        </li>
+        <li>
+          <input type="checkbox" id="giraffe">
+          <label for="giraffe">キリン</label>
+        </li>
+        <li>
+          <input type="checkbox" id="dolphin">
+          <label for="dolphin">イルカ</label>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <input type="checkbox" id="fish">
+      <label for="fish">魚類</label>
+      <ul class="subcategory">
+        <li>
+          <input type="checkbox" id="clownfish">
+          <label for="clownfish">クマノミ</label>
+        </li>
+        <li>
+          <input type="checkbox" id="shark">
+          <label for="shark">サメ</label>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
